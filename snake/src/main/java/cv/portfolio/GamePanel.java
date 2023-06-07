@@ -79,6 +79,10 @@ public class GamePanel extends JPanel implements ActionListener {
                 point.setNewPointPosition();
             }
         }
+        // Make sure obstacle does not appear in same position as point
+        if (point.yPosition == obstacle.yPosition && point.xPosition == obstacle.xPosition) {
+            obstacle.setNewPosition();
+        }
     }
 
     // If snake runs into obstacle, game ends
